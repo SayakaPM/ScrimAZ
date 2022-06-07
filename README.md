@@ -1,5 +1,3 @@
-[![](https://poggit.pmmp.io/shield.state/Report)](https://poggit.pmmp.io/p/Report)
-
 # ScrimAZ
 ScrimAZ is a plugin made to help remove cheaters.
 
