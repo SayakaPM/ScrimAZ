@@ -21,7 +21,7 @@ class Speed implements Listener{
                 if($player->getAllowFlight() === true){
                     return;
                 }
-                Report::alert("Speed", $player->getName());
+                $this->Report->alert("Speed", $player->getName());
             } else {
                 return;
             }
@@ -32,7 +32,7 @@ class Speed implements Listener{
                 if($player->getAllowFlight() === true){
                     return;
                 }
-                Report::alert("Speed", $player->getName());
+                $this->Report->alert("Speed", $player->getName());
             } else {
                 return;
             }
