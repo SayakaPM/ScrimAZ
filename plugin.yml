@@ -1,0 +1,13 @@
+---
+name: ScrimAS
+version: 0.0.1
+main: OnlyJaiden\ScrimAS\Main
+api: 4.2.4
+src-namespace-prefix: OnlyJaiden\ScrimAS
+
+
+permissions:
+  alert.ac:
+    default: op
+    description: List of all reported players
+...
