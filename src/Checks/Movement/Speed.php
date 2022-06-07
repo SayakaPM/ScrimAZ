@@ -11,7 +11,7 @@ use OnlyJaiden\ScrimAS\Alert;
 
 class Speed implements Listener{
     public function onPlayerMove(PlayerMoveEvent $event): void{
-        
+        $report = new Alert;
         $player = $event->getPlayer();
         $x = $event->getFrom()->getX() - $event->getTo()->getX();
         $y = $event->getFrom()->getY() - $event->getTo()->getY();
@@ -21,7 +21,7 @@ class Speed implements Listener{
                 if($player->getAllowFlight() === true){
                     return;
                 }
-                $this->Report->alert("Speed", $player->getName());
+                $report->alert("Speed", $player->getName());
             } else {
                 return;
             }
@@ -32,7 +32,7 @@ class Speed implements Listener{
                 if($player->getAllowFlight() === true){
                     return;
                 }
-                $this->Report->alert("Speed", $player->getName());
+                $report->alert("Speed", $player->getName());
             } else {
                 return;
             }
