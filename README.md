@@ -16,6 +16,9 @@ ScrimAZ is a plugin made to help remove cheaters.
 - Fly [0%]
 - AirJump [0%]
 - Spider [0%]
+**Action**
+- FastBreak [0%]
+- ChestSteal [0%]
 
 # Commands
 
