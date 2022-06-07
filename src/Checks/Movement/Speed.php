@@ -7,6 +7,7 @@ use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\Server;
 use pocketmine\player\Player;
+use OnlyJaiden\ScrimAS\Alert;
 
 class Speed implements Listener{
     public function onPlayerMove(PlayerMoveEvent $event): void{
@@ -20,7 +21,7 @@ class Speed implements Listener{
                 if($player->getAllowFlight() === true){
                     return;
                 }
-                $this->alert("Speed", $player->getName());
+                Report::alert("Speed", $player->getName());
             } else {
                 return;
             }
@@ -31,18 +32,11 @@ class Speed implements Listener{
                 if($player->getAllowFlight() === true){
                     return;
                 }
-                $this->alert("Speed", $player->getName());
+                Report::alert("Speed", $player->getName());
             } else {
                 return;
             }
         }
 
-    }
-    private function alert(string $cheat, string $player): void {
-        foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
-            if($staff->hasPermission("alert.ac")) {
-                $staff->SendMessage("[Alerts] $player has been using $cheat");
-            }
-        }
     }
 }
