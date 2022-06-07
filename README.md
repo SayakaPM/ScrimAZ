@@ -3,22 +3,21 @@
 # ScrimAZ
 ScrimAZ is a plugin made to help remove cheaters.
 
-## Functionality
+# Functionality
 
 - Alerts can be seen via Discord or In-game.
 - Discord Webhook Support.
 - BetterBan Support.
 - Easy to Use.
 
-## Cheats
-
-# Movement
+# Cheats
+## Movement
 - Speed [✓]
 - Fly [0%]
 - AirJump [0%]
 - Spider [0%]
 
-## Commands
+# Commands
 
 |**Command**|**Description**|
 |-----------|---------------|
