@@ -10,9 +10,9 @@ ScrimAZ is a plugin made to help remove cheaters.
 
 # Cheats
 ## Movement
-- Speed [✓]
-- Fly [0%]
-- AirJump [0%]
+- Speed [✓] buggy sometimes.
+- Fly [✓]
+- AirJump [✓]
 - Spider [0%]
 ## Action
 - FastBreak [0%]
