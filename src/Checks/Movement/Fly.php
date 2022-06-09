@@ -9,9 +9,8 @@ use pocketmine\player\Player;
 use OnlyJaiden\ScrimAS\Alert;
 
 class Fly implements Listener{
-  $report = new Alert;
   
     public function onPlayerMove(PlayerMoveEvent $event): void{
-      
+      $report = new Alert;
     }
 }
