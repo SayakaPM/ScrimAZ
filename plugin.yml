@@ -1,6 +1,6 @@
 ---
 name: ScrimAS
-version: 1.0.0
+version: 0.3.0
 main: OnlyJaiden\ScrimAS\Main
 api: 4.2.4
 src-namespace-prefix: OnlyJaiden\ScrimAS
