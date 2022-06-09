@@ -12,7 +12,7 @@ class Alert {
   public function alert(string $cheat, string $player): void {
         foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
             if($staff->hasPermission("alert.ac")) {
-                $staff->SendMessage("[Alerts] $player has been using $cheat");
+                $staff->SendMessage("[§cAlerts§r] $player has been using $cheat.");
             }
         }
     }
