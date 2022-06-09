@@ -9,5 +9,5 @@ src-namespace-prefix: OnlyJaiden\ScrimAS
 permissions:
   alert.ac:
     default: op
-    description: Recive alerts from anticheat
+    description: Get alerts from ac
 ...
