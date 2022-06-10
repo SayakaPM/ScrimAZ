@@ -10,9 +10,8 @@ use pocketmine\player\Player;
 use OnlyJaiden\ScrimAS\User;
 
 class Alert {
-
+  public $point = array();
   public function alert(string $cheat, string $player): void {
-    public $point = array();
     $config = Main::getInstance()->getConfig();
     $user = new User;
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
