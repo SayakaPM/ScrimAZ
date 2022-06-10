@@ -12,15 +12,17 @@ use OnlyJaiden\ScrimAS\User;
 class Alert {
 
   public function alert(string $cheat, string $player): void {
-       $config = Main::getInstance()->getConfig();
-       $user = new User;
-        foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
-            if($staff->hasPermission("ScrimAS.alerts")) {
-                $user->getUser($staff, $player, $cheat);
-                
-            }
-            
+    public $point = array();
+    $config = Main::getInstance()->getConfig();
+    $user = new User;
+    foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
+      if($staff->hasPermission("ScrimAS.alerts")) {
+        $user->getUser($staff, $player, $cheat);
+        $this->point[$player][$cheat] += (float) 1;
+        if($this->point[$player->getName()][$cheat] == 5) {
+          // Todo kick player
         }
-      
+      }     
+    }  
   }
 }
