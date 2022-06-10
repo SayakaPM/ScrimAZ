@@ -15,7 +15,7 @@ class Alert {
        $config = Main::getInstance()->getConfig();
        $user = new User;
         foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
-            if($staff->hasPermission("alert.ac")) {
+            if($staff->hasPermission("ScrimAS.alerts")) {
                 $user->getUser($staff, $player, $cheat);
                 
             }
