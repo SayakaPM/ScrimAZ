@@ -35,7 +35,7 @@ class Main extends PluginBase{
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
     switch($command->getName()){
         case "alerts":
-            if($sender->hasPermission("alert.ac")){
+            if($sender->hasPermission("ScrimAS.alerts")){
                 $config = Main::getInstance()->getConfig();
                 $user = new User;
                 $user->checkAlert($sender);
