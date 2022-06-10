@@ -22,6 +22,6 @@ ScrimAZ is a plugin made to help remove cheaters.
 
 # Commands
 
-|**Command**|**Description**|
+|**Command**|**Permission**|
 |-----------|---------------|
-|`/alerts`|disable annoying anticheat alerts|
+|`/alerts`|alert.ac|
