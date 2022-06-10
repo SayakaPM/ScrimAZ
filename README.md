@@ -24,4 +24,4 @@ ScrimAZ purpose is to alert the staff about hackers.
 
 |**Command**|**Permission**|
 |-----------|---------------|
-|`/alerts`|alert.ac|
+|`/alerts`|ScrimAZ.alerts|
