@@ -42,10 +42,9 @@ class Main extends PluginBase{
             } else {
                 $sender->sendMessage("You don't have permission to run this command!");
             }
-            
-
             return true;
     }
+      return true;
 }
 
 }
