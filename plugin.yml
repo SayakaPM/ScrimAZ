@@ -8,10 +8,10 @@ src-namespace-prefix: OnlyJaiden\ScrimAS
 commands:
   alerts:
     description: Stop getting annoying alerts.
-    permission: alert.ac
+    permission: ScrimAS.alerts
 
 permissions:
-  alert.ac:
+  ScrimAS.alerts:
     default: op
     description: Get alerts from ac.
 ...
