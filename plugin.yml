@@ -1,13 +1,17 @@
 ---
 name: ScrimAS
-version: 1.0.0
+version: 0.5.0
 main: OnlyJaiden\ScrimAS\Main
 api: 4.2.4
 src-namespace-prefix: OnlyJaiden\ScrimAS
 
+commands:
+  alerts:
+    description: Stop getting annoying alerts.
+    permission: alert.ac
 
 permissions:
   alert.ac:
     default: op
-    description: Get alerts from ac
+    description: Get alerts from ac.
 ...

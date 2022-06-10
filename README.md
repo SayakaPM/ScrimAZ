@@ -4,9 +4,10 @@ ScrimAZ is a plugin made to help remove cheaters.
 # Functionality
 
 - Alerts can be seen via Discord or In-game.
-- Discord Webhook Support.
-- BetterBan Support.
+- Discord Webhook Support. [Todo]
+- BetterBan Support. [Todo]
 - Easy to Use.
+- AutoBan [Todo]
 
 # Cheats
 ## Movement
@@ -22,5 +23,4 @@ ScrimAZ is a plugin made to help remove cheaters.
 
 |**Command**|**Description**|
 |-----------|---------------|
-|`/report`|Open a menu to report someone to the server.|
-|`/reportlist`|A list of all the people reported on the server|
+|`/alerts`|disable annoying anticheat alerts|
