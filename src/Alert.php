@@ -18,7 +18,7 @@ class Alert {
       if($staff->hasPermission("ScrimAS.alerts")) {
         $user->getUser($staff, $player, $cheat);
         $this->point[$player][$cheat] += (float) 1;
-        if($this->point[$player->getName()][$cheat] == 5) {
+        if($this->point[$player][$cheat] == 5) {
           // Todo kick player
         }
       }     
