@@ -1,10 +1,10 @@
 # ScrimAZ
 [![](https://poggit.pmmp.io/shield.state/ScrimAS)](https://poggit.pmmp.io/p/ScrimAS)
 
-ScrimAZ is a anticheat made to find hackers
+ScrimAZ is a anticheat made to find hackers\
+if you use the code from plugin please credit and don't claim to owner\
+You can't fork my project and release to PocketMine\
 © 2022 Jaiden 
-if you use the code from plugin please credit and don't claim to owner 
-You can't fork my project and release to PocketMine
 
 # Functionality
 
