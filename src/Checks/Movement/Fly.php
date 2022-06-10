@@ -14,12 +14,10 @@ class Fly implements Listener{
       # Report is use for 
       $report = new Alert;
       $player = $event->getPlayer();
-      $Oldy = $event->getFrom()->getY();
-      $Newy = $event->getTo()->getY();
       $blockAbove = $player->getWorld()->getBlock(new Vector3($player->getPosition()->getX(), $player->getPosition()->getY() + 1, $player->getPosition()->getZ()));
-      $predictMove = (($blockAbove : $Oldy) - 0.08) * 0.98000001907349;
-      $difference = abs($Newy - $predictMove);
-      if($difference >  0.015){
+      $movement = (($blockAbove ? 0 : $event->getFrom()->getY()) - 0.08 * 0.98000001907349);
+      $difference = abs($event->getTo()->getY() - $movement);
+      if($difference > 0.015){
         $report->alert("Fly A", $player->getName());
       }
     }
