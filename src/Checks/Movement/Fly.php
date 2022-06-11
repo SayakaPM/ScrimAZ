@@ -9,6 +9,7 @@ use pocketmine\player\Player;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\entity\effect\EffectManager;
 use pocketmine\entity\effect\EffectInstance;
+use pocketmine\data\bedrock\EffectIds;
 use OnlyJaiden\ScrimAS\Alert;
 
 class Fly implements Listener{
@@ -23,11 +24,10 @@ class Fly implements Listener{
               if($player->GetInAirTicks() > 20){
                   $maxY = $player->getWorld()->getHighestBlockAt(floor($player->getPosition()->getX()), floor($player->getPosition()->getZ()));
                   if($Newy - 2 > $maxY){
-                    if($player->getEffects()->all() == VanillaEffects::LEVITATION()){
+                    if($player->getEffects()->getType() == EffectIds::HASTE){
                       return;
                     }
-                    $player->sendMessage($player->getEffects()->get());
-                      $report->alert("Fly", $player->getName());
+                    $report->alert("Fly", $player->getName());
                   }
               }
               
