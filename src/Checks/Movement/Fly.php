@@ -17,8 +17,9 @@ class Fly implements Listener{
       $blockAbove = $player->getWorld()->getBlock(new Vector3($player->getPosition()->getX(), $player->getPosition()->getY() + 1, $player->getPosition()->getZ()));
       $movement = ($event->getFrom()->getY() - 0.08 )* 0.98000001907349;
       $difference = abs($event->getTo()->getY() - $movement);
+      $player->sendMessage($difference);
       if($difference > 0.015){
-        $report->alert("Fly A", $player->getName());
+       # $report->alert("Fly A", $player->getName());
       }
     }
 }
