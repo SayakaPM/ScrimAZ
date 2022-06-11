@@ -9,13 +9,14 @@ use OnlyJaiden\ScrimAS\Main;
 use pocketmine\Server;
 use pocketmine\player\Player;
 use pocketmine\entity\effect\EffectManager;
+use pocketmine\entity\effect\VanillaEffects;
 use OnlyJaiden\ScrimAS\Alert;
 
 class Check {
   public function checkEffect($player, $cheat): void {
     $report = new Alert;
     if($cheat == 'Fly'){
-        $levitation = EffectManager::get(Effect::LEVITATION);
+        $levitation = EffectManager::get(VanillaEffects::LEVITATION);
         if($player->getEffects()->has($levitation)){
             return;
         }
