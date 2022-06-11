@@ -14,9 +14,9 @@ use OnlyJaiden\ScrimAS\Alert;
 
 class Check {
   public function checkEffect($player, $cheat): void {
+    $levitation = new EffectInstance(VanillaEffects::LEVITATION());
     $report = new Alert;
     if($cheat == 'Fly'){
-      $levitation = new EffectInstance(VanillaEffects::LEVITATION())
         if($player->getEffects()->has($levitation)){
             return;
         }
