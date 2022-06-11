@@ -19,7 +19,7 @@ class Fly implements Listener{
       $difference = abs($event->getTo()->getY() - $movement);
       if($difference > 0.015){
         if($player->GetInAirTicks() > 20){
-          $maxY = $player->getPosition()->getHighestBlockAt(floor($event->getTo()->getX()), floor($event->getTo()->getZ()));
+          $maxY = $player->getWorld()->getHighestBlockAt(floor($player->getPosition()->getX()), floor($player->getPosition()->getZ()));
           if($difference - 2 > $maxY){
             $report->alert("Fly", $player->getName());
         }
