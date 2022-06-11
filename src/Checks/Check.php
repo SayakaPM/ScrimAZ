@@ -16,7 +16,7 @@ class Check {
   public function checkEffect($player, $cheat): void {
     $report = new Alert;
     if($cheat == 'Fly'){
-      $levitation = EffectInstance::get(VanillaEffects::LEVITATION);
+      $levitation = new EffectInstance(VanillaEffects::LEVITATION())
         if($player->getEffects()->has($levitation)){
             return;
         }
