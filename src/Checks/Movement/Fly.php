@@ -24,7 +24,7 @@ class Fly implements Listener{
                     if($player->getEffects()->all() == VanillaEffects::LEVITATION()){
                       return;
                     }
-                    $player->sendMessage($player->getEffects());
+                    $player->sendMessage($player->getEffects()->effectType());
                       $report->alert("Fly", $player->getName());
                   }
               }
