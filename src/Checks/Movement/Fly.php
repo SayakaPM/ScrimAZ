@@ -6,6 +6,10 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\Server;
 use pocketmine\player\Player;
+use pocketmine\entity\effect\VanillaEffects;
+use pocketmine\entity\effect\EffectManager;
+use pocketmine\entity\effect\EffectInstance;
+use pocketmine\data\bedrock\EffectIds;
 use OnlyJaiden\ScrimAS\Alert;
 
 class Fly implements Listener{
@@ -18,14 +22,15 @@ class Fly implements Listener{
       if($player->getAllowFlight() == false){
           if($Oldy <= $Newy){
               if($player->GetInAirTicks() > 20){
-                  $maxY = $player->getWorld()->getHighestBlockAt(floor($event->getTo()->getX()), floor($event->getTo()->getZ()));
+                  $maxY = $player->getWorld()->getHighestBlockAt(floor($player->getPosition()->getX()), floor($player->getPosition()->getZ()));
                   if($Newy - 2 > $maxY){
+                    if(count($player->getEffects()->all()) == 0){
                       $report->alert("Fly", $player->getName());
+                    }
                   }
               }
               
           }
       }
-      
     }
 }

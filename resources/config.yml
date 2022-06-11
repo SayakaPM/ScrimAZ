@@ -1,2 +1,7 @@
+#just don't change this.
+Version: 0.6.0
 # Please use § nothing else when doing the prefix
 AntiCheat.prefix: "[§cAlerts§r]"
+# Discord webhook support
+webhook.enable: false
+webhook.url: ""
