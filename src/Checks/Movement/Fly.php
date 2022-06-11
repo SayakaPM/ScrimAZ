@@ -8,6 +8,7 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\entity\effect\EffectManager;
+use pocketmine\entity\effect\EffectInstance;
 use OnlyJaiden\ScrimAS\Alert;
 
 class Fly implements Listener{
