@@ -18,7 +18,7 @@ class Speed implements Listener{
         //$y = $event->getFrom()->getY() - $event->getTo()->getY();
         $z = $event->getFrom()->getZ() - $event->getTo()->getZ();
         //Checks if player is moving too fast in X Cords
-        if(abs($x) >= 1) {
+        if(abs($x) >= 1.1) {
             if(count($player->getEffects()->all()) == 0){
                 if($player->getAllowFlight() === true){
                     return;
@@ -29,7 +29,7 @@ class Speed implements Listener{
             }
         }
         //Checks if player is moving too fast in Y Cords
-        if(abs($z) >= 1) {
+        if(abs($z) >= 1.1) {
             if(count($player->getEffects()->all()) == 0){
                 if($player->getAllowFlight() === true){
                     return;
