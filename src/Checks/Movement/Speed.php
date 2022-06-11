@@ -2,6 +2,7 @@
 
 namespace OnlyJaiden\ScrimAS\Checks\Movement;
 
+use pocketmine\math\Vector3;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\entity\effect\VanillaEffects;
