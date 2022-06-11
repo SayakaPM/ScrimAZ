@@ -7,14 +7,14 @@ ScrimAZ is an anti-cheat made to find hackers.\
 # Functionality
 
 - Alerts can be seen via Discord or In-game.
-- Discord Webhook Support. [Todo]
+- Discord Webhook Support.
 - BetterBan Support. [Todo]
 - Easy to Use.
 - AutoBan [Todo]
 
 # Cheats
 ## Movement
-- Speed [✓] buggy sometimes.
+- Speed [✓]
 - Fly [✓]
 - AirJump [✓]
 - Spider [0%]

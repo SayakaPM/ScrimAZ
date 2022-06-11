@@ -21,7 +21,12 @@ class Main extends PluginBase{
         self::setInstance($this);
         $config = Main::getInstance()->getConfig();
         $this->saveDefaultConfig();
-        $version = file_get_contents('https://raw.githubusercontent.com/SayakaPM/PM-AntiCheat/main/README.md');
+        $githubv = curl_init();
+        curl_setopt($githubv, CURLOPT_URL, 'https://raw.githubusercontent.com/SayakaPM/PM-AntiCheat/main/README.md');
+        curl_setopt($githubv, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($githubv, CURLOPT_RETURNTRANSFER, 1);
+        $version = curl_exec($githubv);
+        curl_close($githubv);
         if($config->get("Version") !==  $version) {
             $this->getLogger()->info("ScrimAS is outdated. https://poggit.pmmp.io/p/ScrimAS/");
         }
