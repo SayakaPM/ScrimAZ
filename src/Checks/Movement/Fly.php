@@ -16,10 +16,14 @@ class Fly implements Listener{
       $player = $event->getPlayer();
       $blockAbove = $player->getWorld()->getBlock(new Vector3($player->getPosition()->getX(), $player->getPosition()->getY() + 1, $player->getPosition()->getZ()));
       $movement = ($event->getFrom()->getY() - 0.08 )* 0.98000001907349;
-      $difference = abs($player->getPosition()->getY() - $movement);
-      $player->sendMessage($difference);
+      $difference = abs($event->getTo()->getY() - $movement);
       if($difference > 0.015){
-       # $report->alert("Fly A", $player->getName());
+        if($player->GetInAirTicks() > 20){
+          $maxY = $player->getPosition()->getHighestBlockAt(floor($event->getTo()->getX()), floor($event->getTo()->getZ()));
+          if($difference - 2 > $maxY){
+            $report->alert("Fly", $player->getName());
+        }
+        }
       }
     }
 }
