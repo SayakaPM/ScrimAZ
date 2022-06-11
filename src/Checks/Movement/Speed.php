@@ -15,9 +15,8 @@ class Speed implements Listener{
         $report = new Alert;
         $player = $event->getPlayer();
         $x = $event->getFrom()->getX() - $event->getTo()->getX();
-        $y = $event->getFrom()->getY() - $event->getTo()->getY();
+        //$y = $event->getFrom()->getY() - $event->getTo()->getY();
         $z = $event->getFrom()->getZ() - $event->getTo()->getZ();
-        $player->sendMessage(new Vector3($x, $y, $z));
         //Checks if player is moving too fast in X Cords
         if(abs($x) >= 1) {
             if(count($player->getEffects()->all()) == 0){
