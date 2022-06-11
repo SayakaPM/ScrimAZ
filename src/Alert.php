@@ -40,5 +40,5 @@ class Alert {
 
     $webhook = new Webhook($config->get("webhook.url"));
     $webhook->send($message);
-}
+  }
 }
