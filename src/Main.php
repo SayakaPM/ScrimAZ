@@ -27,7 +27,7 @@ class Main extends PluginBase{
         curl_setopt($githubv, CURLOPT_RETURNTRANSFER, 1);
         $version = curl_exec($githubv);
         curl_close($githubv);
-        if(0.6.0 !==  $version) {
+        if('0.6.0' !==  $version) {
             $this->getLogger()->info("ScrimAS is outdated. https://poggit.pmmp.io/p/ScrimAS/");
         }
     }
