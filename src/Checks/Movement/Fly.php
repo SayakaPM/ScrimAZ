@@ -24,10 +24,9 @@ class Fly implements Listener{
               if($player->GetInAirTicks() > 20){
                   $maxY = $player->getWorld()->getHighestBlockAt(floor($player->getPosition()->getX()), floor($player->getPosition()->getZ()));
                   if($Newy - 2 > $maxY){
-                    if(count($player->getEffects()->all()) <= 1){
-                      return;
+                    if(count($player->getEffects()->all()) = 0){
+                      $report->alert("Fly", $player->getName());
                     }
-                    $report->alert("Fly", $player->getName());
                   }
               }
               
