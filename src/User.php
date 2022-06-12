@@ -28,7 +28,7 @@ class User{
     
     public function getUser(Player $staff) : string
     {
-         if($config == false) 
+         if($this->config($staff) == false) 
          {
            return "false";
          }
