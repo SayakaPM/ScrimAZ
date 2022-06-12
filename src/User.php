@@ -31,10 +31,9 @@ class User{
          
     }
 
-    private function config(Player $staff) {
+    private function config(Player $staff) : Config {
         $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
-        if($config->get($staff->getName()) == false) 
-        {
+        if($config->get($staff->getName()) == false) {
           return "false";
         }
     }
