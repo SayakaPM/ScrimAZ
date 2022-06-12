@@ -31,7 +31,7 @@ class Alert {
 
     $embed = new Embed();
     $embed->setColor(1252377); 
-    $embed->setTitle("A new alert has been sent!");
+    $embed->setTitle("AntiCheat Alerts");
     $embed->addField("Player", $player);
     $embed->addField("Detection", $cheat);
 
