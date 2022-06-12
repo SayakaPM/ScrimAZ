@@ -28,8 +28,9 @@ class User{
          $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
          $new = Main::getInstance()->getConfig();
          if($config->get($staff->getName()) == false) {
-           return 0;
+           return "false";
          }
+         
     }
 
 }
