@@ -24,7 +24,7 @@ class User{
         
     }
     
-    public function getUser() : string{
+    public function getUser(Player $staff) : string{
         $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
          if($config->get($staff->getName()) == false) {
            return "false";
