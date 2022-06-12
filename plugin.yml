@@ -2,7 +2,7 @@
 name: ScrimAS
 version: 0.6.0
 main: OnlyJaiden\ScrimAS\Main
-api: 4.2.4
+api: 4.0.0
 src-namespace-prefix: OnlyJaiden\ScrimAS
 
 commands:
