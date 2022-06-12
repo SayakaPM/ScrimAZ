@@ -10,10 +10,12 @@ use pocketmine\player\Player;
 class User{
     public $User = [];
     
-    public function checkAlert(Player $player) : void{
+    public function checkAlert(Player $player) : void
+    {
         $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
         $new = Main::getInstance()->getConfig();
-        if($config->get($player->getName()) == true) {
+        if($config->get($player->getName()) == true) 
+        {
             $config->set($player->getName(), false);
             $player->SendMessage($new->get("AntiCheat.prefix")." Your alerts are now ENABLED!");
         } elseif($config->get($player->getName()) == false) {
@@ -24,12 +26,22 @@ class User{
         
     }
     
-    public function getUser(Player $staff) : string{
-        $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
-         if($config->get($staff->getName()) == false) {
+    public function getUser(Player $staff) : string
+    {
+         if($config == false) 
+         {
            return "false";
          }
          
+    }
+
+    private function config(Player $staff)
+    {
+        $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
+        if($config->get($staff->getName()) == false) 
+        {
+          return "false";
+        }
     }
 
 }
