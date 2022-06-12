@@ -28,7 +28,7 @@ class User{
          $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
          $new = Main::getInstance()->getConfig();
          if($config->get($staff->getName()) == false) {
-             $staff->SendMessage($new->get("AntiCheat.prefix")." $player has been using $cheat.");
+           return 0;
          }
     }
 

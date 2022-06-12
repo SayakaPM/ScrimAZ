@@ -21,6 +21,13 @@ class Check {
             return;
         }
         $report->alert($cheat, $player->getName());
-    }
+      }
+      // Check if Player has Speed as it alerts speed.
+    if($cheat == 'Speed'){
+      if($player->getEffects()->has(VanillaEffects::SPEED())){
+          return;
+      }
+      $report->alert($cheat, $player->getName());
+  }
   }
 }
