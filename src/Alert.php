@@ -13,18 +13,17 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 
 class Alert {
-  public function alert(string $cheat, string $player): void {
+  public function alert(string $cheat, Player $player): void {
     $config = Main::getInstance()->getConfig();
     $user = new User;
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("ScrimAS.alerts")) {
-        if($user->getUser($staff) == "false") {
-          $this->DiscordAlerts($cheat, $player);
-        }
+        $user->getUser($staff, $player, $cheat);
+        $this->DiscordAlerts($cheat, $player);
       }     
     }  
   }
-  private function DiscordAlerts(string $cheat, string $player): void {
+  private function DiscordAlerts(string $cheat, Player $player): void {
     $config = Main::getInstance()->getConfig();
     if(!$config->get("webhook.enable")) {
         return;
@@ -33,8 +32,10 @@ class Alert {
     $embed = new Embed();
     $embed->setColor(1252377); 
     $embed->setTitle("A new alert has been sent!");
-    $embed->addField("Player", $player);
+    $embed->addField("Player", $player->getName());
+    $embed->addField("Ping", $player->getNetworkSession()->getPing());
     $embed->addField("Detection", $cheat);
+
 
     $message = new Message();
     $message->addEmbed($embed);

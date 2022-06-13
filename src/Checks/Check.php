@@ -10,7 +10,6 @@ use OnlyJaiden\ScrimAS\Main;
 use OnlyJaiden\ScrimAS\Alert;
 // pocketmine
 use pocketmine\Server;
-use pocketmine\math\Vector3;
 use pocketmine\player\Player;
 use pocketmine\entity\effect\VanillaEffects;
 use pocketmine\entity\effect\EffectInstance;
@@ -24,7 +23,7 @@ class Check {
         if($player->getEffects()->has(VanillaEffects::LEVITATION())){
             return;
         }
-        $report->alert($cheat, $player->getName());
+        $report->alert($cheat, $player);
       }
       // Speed Effects #0001
     if($cheat == 'Speed'){
@@ -32,8 +31,9 @@ class Check {
           return;
       }
       // Blocks #0002
-      $blockBelow = $player->getWorld()->getBlock(new Vector3($player->getPosition()->getX(), ($player->getPosition()->getY() - 0.5), $player->getPosition()->getZ())->getName());
-      $player->sendMessage($blockBelow);
+      $cord = $player->getPosition()->getY() - 0.5;
+      $blockBelow = $player->getWorld()->getBlock($player->getPosition()->subtract(0, 0.5, 0));
+      $player->sendMessage($blockBelow->getName());
       $report->alert($cheat, $player->getName());
   }
   }

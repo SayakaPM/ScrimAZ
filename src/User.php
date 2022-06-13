@@ -24,7 +24,7 @@ class User{
         
     }
     
-    public function getUser(Player $staff, Cheat $cheat) : void {
+    public function getUser(Player $staff, string $cheat, string $player) : void{
         $new = Main::getInstance()->getConfig();
         if($config->get($staff->getName()) == false) {
             $staff->SendMessage($new->get("AntiCheat.prefix")." $player has been using $cheat.");
