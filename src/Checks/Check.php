@@ -19,20 +19,20 @@ use pocketmine\block\Block;
 class Check {
   public function checkEffect($player, $cheat): void {
     $report = new Alert;
-    // Effects #0000
+    // Fly Effects #0000
     if($cheat == 'Fly'){
         if($player->getEffects()->has(VanillaEffects::LEVITATION())){
             return;
         }
         $report->alert($cheat, $player->getName());
       }
-      // Effects #0001
+      // Speed Effects #0001
     if($cheat == 'Speed'){
       if($player->getEffects()->has(VanillaEffects::SPEED())){
           return;
       }
       // Blocks #0002
-      $blockBelow = $player->getWorld()->getBlock(new Vector3($player->getPosition()->getX(), $player->getPosition()->getY() - 0.5, $player->getPosition()->getZ()));
+      $blockBelow = $player->getWorld()->getBlock(new Vector3($player->getPosition()->getX(), $player->getPosition()->getY() - 0.5, $player->getPosition()->getZ())->getName());
       $player->sendMessage($blockBelow);
       $report->alert($cheat, $player->getName());
   }
