@@ -18,8 +18,9 @@ class Alert {
     $user = new User;
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("ScrimAS.alerts")) {
-        $user->getUser($staff, $player, $cheat);
-        $this->DiscordAlerts($cheat, $player);
+        if($user->getUser($staff) == "false") {
+          $this->DiscordAlerts($cheat, $player);
+        }
       }     
     }  
   }
