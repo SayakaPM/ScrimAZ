@@ -19,7 +19,6 @@ class Alert {
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("ScrimAS.alerts")) {
         if($user->getUser($staff) == "false") {
-          $staff->SendMessage($config->get("AntiCheat.prefix")." $player has been using $cheat.");
           $this->DiscordAlerts($cheat, $player);
         }
       }     

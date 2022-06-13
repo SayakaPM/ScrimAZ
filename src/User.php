@@ -24,18 +24,10 @@ class User{
         
     }
     
-    public function getUser(Player $staff) : string {
-         if($this->config($staff) == "false") {
-           return "false";
-         }
-         
-    }
-
-    private function config(Player $staff) : Config {
-        $config = new Config('plugin_data/ScrimAS/'."user.yml", Config::YAML);
+    public function getUser(Player $staff, Cheat $cheat) : void {
+        $new = Main::getInstance()->getConfig();
         if($config->get($staff->getName()) == false) {
-          return "false";
+            $staff->SendMessage($new->get("AntiCheat.prefix")." $player has been using $cheat.");
+         }
         }
-    }
-
 }
