@@ -22,9 +22,13 @@ class Fly implements Listener{
       if($player->getAllowFlight() == false){
           if($Oldy <= $Newy){
               if($player->GetInAirTicks() > 20){
-                  $maxY = $player->getWorld()->getHighestBlockAt(floor($player->getPosition()->getX()), floor($player->getPosition()->getZ()));
-                  if($Newy - 2 > $maxY){
+                $playerPos = $player->getPosition()->floor();
+                $world = $player->getPosition()->getWorld();
+                for($y = $playerPos - 2; $y >= World::MIN_Y; --$y){
+                  $block = $world->getBlockAt($playerPos->x, $y, $playerPos->z, false, false);
+                  if($block->isSolid() && !$block->isTransparent()){
                     $check->checkEffect($player, 'Fly');
+                  }
                   }
               } 
           }

@@ -13,12 +13,15 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 
 class Alert {
+  public $AlertCount = [];
   public function alert(string $cheat, Player $player): void {
     $config = Main::getInstance()->getConfig();
     $user = new User;
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("ScrimAS.alerts")) {
         $user->getUser($staff, $cheat, $player);
+        $this->AlertCount[$player->getName()]++
+        $player->sendMessage($this->ACount[$player->getName()]);
         $this->DiscordAlerts($cheat, $player);
       }     
     }  
