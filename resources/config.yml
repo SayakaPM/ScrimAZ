@@ -5,3 +5,9 @@ AntiCheat.prefix: "[§cAlerts§r]"
 # Discord webhook support
 webhook.enable: false
 webhook.url: ""
+
+
+
+# Cheats
+Speed: true
+
