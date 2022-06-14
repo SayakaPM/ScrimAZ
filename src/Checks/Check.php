@@ -12,6 +12,7 @@ use OnlyJaiden\ScrimAS\Alert;
 use pocketmine\Server;
 use pocketmine\player\Player;
 use pocketmine\entity\effect\VanillaEffects;
+use pocketmine\block\VanillaBlocks;
 use pocketmine\entity\effect\EffectInstance;
 use pocketmine\block\Block;
 
@@ -33,7 +34,7 @@ class Check {
       // Blocks #0002
       $cord = $player->getPosition()->getY() - 0.5;
       $blockBelow = $player->getWorld()->getBlock($player->getPosition()->subtract(0, 0.5, 0));
-      $player->sendMessage($blockBelow->getName());
+      if($blockBelow->isSameType(VanillaBlocks::PACKET_ICE()) || $blockBelow->isSameType(VanillaBlocks::ICE()))
       $report->alert($cheat, $player);
   }
   }
