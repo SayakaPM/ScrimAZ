@@ -32,7 +32,7 @@ class Alert {
     $playerping = $player->getNetworkSession()->getPing();
     $embed = new Embed();
     $embed->setColor(1252377); 
-    $embed->setTitle("A new alert has been sent!");
+    $embed->setTitle("AntiCheat Detection!");
     $embed->addField("Player", $player->getName());
     $embed->addField("Ping", "$playerping");
     $embed->addField("Detection", $cheat);
