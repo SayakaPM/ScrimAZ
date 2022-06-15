@@ -37,7 +37,7 @@ class Check {
       // Blocks #0002
       $cord = $player->getPosition()->getY() - 0.5;
       $blockBelow = $player->getWorld()->getBlock($player->getPosition()->subtract(0, 0.5, 0));
-      if($blockBelow->isSameType(VanillaBlocks::PACKET_ICE()) || $blockBelow->isSameType(VanillaBlocks::ICE()))
+      //if($blockBelow->isSameType(VanillaBlocks::PACKET_ICE()) || $blockBelow->isSameType(VanillaBlocks::ICE()))
       $report->alert($cheat, $player);
     }
   }
