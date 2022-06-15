@@ -21,13 +21,16 @@ class Check {
     $report = new Alert;
     // Fly Effects #0000
     if($cheat == 'Fly'){
+      if($player->getAllowFlight() == false){
         if($player->getEffects()->has(VanillaEffects::LEVITATION())){
             return;
         }
         $report->alert($cheat, $player);
       }
+    }
       // Speed Effects #0001
     if($cheat == 'Speed'){
+      if($player->getAllowFlight() == false){
       if($player->getEffects()->has(VanillaEffects::SPEED())){
           return;
       }
@@ -36,6 +39,7 @@ class Check {
       $blockBelow = $player->getWorld()->getBlock($player->getPosition()->subtract(0, 0.5, 0));
       if($blockBelow->isSameType(VanillaBlocks::PACKET_ICE()) || $blockBelow->isSameType(VanillaBlocks::ICE()))
       $report->alert($cheat, $player);
+    }
   }
-  }
+}
 }

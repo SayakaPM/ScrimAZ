@@ -19,13 +19,19 @@ class Alert {
     $user = new User;
     foreach(Server::getInstance()->getOnlinePlayers() as $staff) {
       if($staff->hasPermission("ScrimAS.alerts")) {
-        $user->getUser($staff, $cheat, $player);
-        $this->AlertCount[$player->getName()]++
-        $player->sendMessage($this->ACount[$player->getName()]);
+        if(isset($this->count[$player->getName()])) {
+          $user->getUser($staff, $cheat, $player);
+          $this->count[$player->getName()]++ 
+          $player->sendMessage($this->ACount[$player->getName()]);
+        } else {
+          $this->count[] = $player->getName();
+          $this->count[$player->getName()]++ 
+        }
         $this->DiscordAlerts($cheat, $player);
       }     
     }  
   }
+
   private function DiscordAlerts(string $cheat, Player $player): void {
     $config = Main::getInstance()->getConfig();
     if(!$config->get("webhook.enable")) {
