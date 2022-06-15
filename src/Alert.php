@@ -13,7 +13,7 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 
 class Alert {
-  public $AlertCount = [];
+  public $count = [];
   public function alert(string $cheat, Player $player): void {
     $config = Main::getInstance()->getConfig();
     $user = new User;
@@ -21,13 +21,16 @@ class Alert {
       if($staff->hasPermission("ScrimAS.alerts")) {
         if(isset($this->count[$player->getName()])) {
           $user->getUser($staff, $cheat, $player);
-          $this->count[$player->getName()]++ 
-          $player->sendMessage($this->ACount[$player->getName()]);
+          $this->count[$player->getName()]++;
+          $player->sendMessage($this->count[$player->getName()]);
         } else {
           $this->count[] = $player->getName();
-          $this->count[$player->getName()]++ 
+          $this->count[$player->getName()]++; 
         }
         $this->DiscordAlerts($cheat, $player);
+        if($this->count[$player->getName()] == 3){
+          $player->kick($config->get("AntiCheat.prefix")." has Detected $cheat.");
+        }
       }     
     }  
   }

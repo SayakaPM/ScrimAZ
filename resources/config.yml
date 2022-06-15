@@ -6,6 +6,9 @@ AntiCheat.prefix: "[§cAlerts§r]"
 webhook.enable: false
 webhook.url: ""
 
+Punishment = "ban"
+Punishment.alert = 3
+
 
 
 # Cheats
