@@ -24,8 +24,7 @@ class Alert {
           $this->count[$player->getName()]++;
           $player->sendMessage($this->count[$player->getName()]);
         } else {
-          $this->count[] = $player->getName();
-          $this->count[$player->getName()]++; 
+          $this->count == [$player->getName()][0]; 
         }
         $this->DiscordAlerts($cheat, $player);
         if($this->count[$player->getName()] == 3){
