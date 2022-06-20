@@ -13,7 +13,8 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 
 class Alert {
-  public $count = [];
+  private $count = [];
+  
   public function alert(string $cheat, Player $player): void {
     $config = Main::getInstance()->getConfig();
     $user = new User;
@@ -24,11 +25,13 @@ class Alert {
           $this->count[$player->getName()]++;
           $player->sendMessage($this->count[$player->getName()]);
         } else {
-          $this->count == [$player->getName()][0]; 
+          $this->count[$player->getName()]=1;
         }
         $this->DiscordAlerts($cheat, $player);
         if($this->count[$player->getName()] == 3){
           $player->kick($config->get("AntiCheat.prefix")." has Detected $cheat.");
+        } else {
+          $this->count[$player->getName()]=1;
         }
       }     
     }  
