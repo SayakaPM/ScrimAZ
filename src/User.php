@@ -5,6 +5,8 @@ namespace OnlyJaiden\ScrimAS;
 use OnlyJaiden\ScrimAS\Main;
 use pocketmine\utils\Config;
 use pocketmine\player\Player;
+use pocketmine\entity\effect\VanillaEffects;
+use pocketmine\entity\effect\EffectInstance;
 
 
 class User{
@@ -32,4 +34,22 @@ class User{
             $staff->SendMessage($new->get("AntiCheat.prefix")." $cheater has been using $cheat.");
          }
         }
+
+        public static function getMovementSpeed(Player $player) : float{
+            $p = $player->getPlayer();
+            $max = $p->isSprinting() ? 0.29 : 0.216;
+            $max += self::getEffect($p, VanillaEffects::SPEED()) * 0.2;
+    
+            return $max;
+        }
+
+        public static function getEffect(Player $player, Effect $effect) : float{
+           $peffect = $player->getEffects()->get($effect);
+           $leveleffect = $peffect->getEffectLevel();
+           if($leveleffect) {
+            return $leveleffect;
+           } 
+           return 0;
+        }
+    
 }
