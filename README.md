@@ -2,7 +2,7 @@
 [![](https://poggit.pmmp.io/shield.state/ScrimAS)](https://poggit.pmmp.io/p/ScrimAS)
 <div align="center">
     <a href="https://discord.gg/XBnYcKVwtT">
-        <img alt="Discord" src="https://img.shields.io/discord/992877954843561994?label=Support">
+        <img alt="Discord" src="https://img.shields.io/discord/992877954843561994?label=Discord Support">
     </a>
 </div>
 ScrimAZ is an anti-cheat made to find hackers.\
@@ -25,7 +25,6 @@ ScrimAZ is an anti-cheat made to find hackers.\
 ## Action
 - FastBreak [0%]
 - ChestSteal [0%]
-<iframe src="https://trello.com/b/chwka4PW/scrimac.html" frameBorder="0" width="340" height="220"></iframe>
 
 # Commands
 
